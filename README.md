@@ -40,29 +40,29 @@ The `ExpenseSharingApp` class serves as a facade, providing a simplified interfa
 
 ### Single Responsibility Principle (SRP)
 - Each class has a single responsibility:
-    - `UserService`: Managing users
-    - `BalanceService`: Tracking financial balances
-    - `ExpenseService`: Processing expenses
-    - `GroupService`: Managing groups
+  - `UserService`: Managing users
+  - `BalanceService`: Tracking financial balances
+  - `ExpenseService`: Processing expenses
+  - `GroupService`: Managing groups
 
 ### Open/Closed Principle (OCP)
 - The application is open for extension but closed for modification:
-    - New split types can be added by implementing the `Split` interface
-    - New transaction types can be added by extending the `Transaction` class
+  - New split types can be added by implementing the `Split` interface
+  - New transaction types can be added by extending the `Transaction` class
 
 ### Liskov Substitution Principle (LSP)
 - Subtypes are substitutable for their base types:
-    - `ExpenseTransaction` and `SettlementTransaction` can be used anywhere a `Transaction` is expected
-    - Different `Split` implementations can be used interchangeably
+  - `ExpenseTransaction` and `SettlementTransaction` can be used anywhere a `Transaction` is expected
+  - Different `Split` implementations can be used interchangeably
 
 ### Interface Segregation Principle (ISP)
 - Interfaces are client-specific rather than general-purpose:
-    - `Split` interface contains only methods relevant to splitting expenses
+  - `Split` interface contains only methods relevant to splitting expenses
 
 ### Dependency Inversion Principle (DIP)
 - High-level modules depend on abstractions, not details:
-    - Services depend on interfaces rather than concrete implementations
-    - Balance calculations depend on the `Split` interface, not specific implementations
+  - Services depend on interfaces rather than concrete implementations
+  - Balance calculations depend on the `Split` interface, not specific implementations
 
 ## Low-Level Design Components
 
